@@ -29,7 +29,7 @@ namespace Chapter.Commands{
             _recordedCommands.Reverse();
         }
 
-        void Update(){
+        void FixedUpdate(){
             if(isRecording){
                 recordingTime += Time.deltaTime;
             }
@@ -43,7 +43,8 @@ namespace Chapter.Commands{
                         _recordedCommands.Values[0].Execute();
                         _recordedCommands.RemoveAt(0);
                     }
-                }else{
+                }
+                else{
                     Debug.Log("replay over");
                     isReplaying = false;
                 }
